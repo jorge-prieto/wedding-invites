@@ -1,0 +1,257 @@
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+
+body{
+  font-family:'Josefin Sans',sans-serif;
+  background:#F2F0EB;
+  overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
+  color:#2E3328;
+}
+
+.wrap{
+  max-width:500px;
+  margin:0 auto;
+  background:#F2F0EB;
+  overflow:hidden;
+}
+
+/* ========================
+   HERO
+   ======================== */
+
+.hero{
+  position:relative;
+  width:100%;
+  height:58vh;
+  min-height:340px;
+  max-height:480px;
+  overflow:hidden;
+}
+
+.hero-img{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  z-index:0;
+}
+
+.hero-vig{
+  position:absolute;
+  inset:0;
+  background:radial-gradient(ellipse at center,transparent 30%,rgba(50,60,40,.28) 100%);
+  z-index:1;
+  pointer-events:none;
+}
+
+.hero-fade{
+  position:absolute;
+  bottom:0;
+  left:0;
+  width:100%;
+  height:70px;
+  background:linear-gradient(0deg,rgba(242,240,235,.85) 0%,transparent 100%);
+  z-index:2;
+  pointer-events:none;
+}
+
+.hero-content{
+  position:relative;
+  z-index:2;
+  width:100%;
+  height:100%;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  padding:0 24px;
+  margin-top:-20px;
+}
+
+.hname{
+  font-family:'Pinyon Script',cursive;
+  color:#fff;
+  text-shadow:0 2px 18px rgba(0,0,0,.22),0 1px 4px rgba(0,0,0,.12);
+  text-align:center;
+  line-height:1.05;
+}
+
+.hn1{font-size:clamp(3rem,10vw,4.8rem);opacity:0;animation:fi .9s ease .3s forwards}
+.hamp{
+  font-family:'Pinyon Script',cursive;
+  font-size:clamp(1.5rem,4.5vw,2.1rem);
+  color:rgba(255,255,255,.72);
+  text-shadow:0 2px 12px rgba(0,0,0,.15);
+  opacity:0;
+  animation:fi .9s ease .6s forwards;
+  padding-top:10px;
+}
+.hn2{font-size:clamp(3rem,10vw,4.8rem);opacity:0;animation:fi .9s ease .9s forwards}
+
+.hdate{
+  margin-top:20px;
+  font-weight:200;
+  font-size:.82rem;
+  letter-spacing:5px;
+  color:rgba(255,255,255,.75);
+  text-shadow:0 1px 8px rgba(0,0,0,.15);
+  opacity:0;
+  animation:fi .8s ease 1.3s forwards;
+}
+
+/* Scroll hint */
+
+.hero-hint{
+  position:absolute;
+  bottom:14px;
+  left:0;
+  width:100%;
+  text-align:center;
+  z-index:3;
+  opacity:0;
+  animation:fi .7s ease 1.8s forwards;
+}
+
+.hint-txt{
+  font-weight:400;
+  font-size:.58rem;
+  letter-spacing:2.5px;
+  text-transform:uppercase;
+  color:#3D4A35;
+}
+
+.hint-arrow{
+  display:block;
+  margin-top:2px;
+  color:#4A5740;
+  font-size:.85rem;
+  animation:bounce 2.2s ease-in-out infinite;
+}
+
+/* ========================
+   SECTION 2
+   ======================== */
+
+.sec2{
+  position:relative;
+  width:100%;
+  background:#F2F0EB;
+}
+
+.euc-top,
+.euc-bottom{
+  width:100%;
+  display:block;
+  pointer-events:none;
+}
+
+.sec2-inner{
+  padding:2px 32px 8px;
+  text-align:center;
+}
+
+/* Monogram */
+
+.mono{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  margin:0 0 18px;
+  opacity:0;
+  transform:translateY(14px);
+}
+
+.mono.vis{
+  opacity:1;
+  transform:translateY(0);
+  transition:all .8s ease;
+}
+
+.mono-l{
+  font-family:'Cormorant Garamond',serif;
+  font-weight:300;
+  color:#2E3328;
+  line-height:1;
+  display:flex;
+  height:48px;
+  font-size:3rem;
+}
+
+.mono-j{font-size:2.7rem}
+
+.mono-bar{
+  width:1.5px;
+  height:44px;
+  background:#6B7B5E;
+  margin:0 18px;
+}
+
+/* Texto */
+
+.casamos{
+  text-align:center;
+  margin-bottom:18px;
+  opacity:0;
+  transform:translateY(14px);
+}
+
+.casamos.vis{
+  opacity:1;
+  transform:translateY(0);
+  transition:all .8s ease .1s;
+}
+
+.casamos-t{
+  font-weight:400;
+  font-size:.8rem;
+  letter-spacing:4px;
+  text-transform:uppercase;
+  color:#2E3328;
+  margin-bottom:6px;
+}
+
+.casamos-s{
+  font-family:'Cormorant Garamond',serif;
+  font-style:italic;
+  font-size:1rem;
+  color:#5A6650;
+  line-height:1.6;
+}
+
+/* Foto */
+
+.foto-wrap{
+  width:100%;
+  max-width:300px;
+  margin:0 auto 8px;
+  opacity:0;
+  transform:translateY(16px);
+}
+
+.foto-wrap.vis{
+  opacity:1;
+  transform:translateY(0);
+  transition:all .9s ease .2s;
+}
+
+.foto-wrap img{
+  width:100%;
+  display:block;
+  border-radius:2px;
+}
+
+/* ========================
+   ANIMATIONS
+   ======================== */
+
+@keyframes fi{
+  from{opacity:0;transform:translateY(12px)}
+  to{opacity:1;transform:translateY(0)}
+}
+
+@keyframes bounce{
+  0%,100%{transform:translateY(0)}
+  50%{transform:translateY(6px)}
+}
