@@ -5,7 +5,7 @@
 
 function revealOnScroll() {
   const elements = document.querySelectorAll(
-    '.mono, .casamos, .foto-wrap, .sec3-text, .fecha-box, .countdown, .evento, .vestimenta'
+    '.mono, .casamos, .foto-wrap, .sec3-text, .fecha-box, .countdown, .evento, .vestimenta, .regalos, .rsvp, .cierre-bloque, .foto-marco, .foto-cita'
   );
 
   elements.forEach(el => {
